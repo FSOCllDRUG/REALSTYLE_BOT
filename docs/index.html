@@ -4,88 +4,78 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        body {
-            color: var(--tg-theme-text-color);
-            /* background: var(--tg-theme-bg-color); */
-            background:radial-gradient(at 24.182683184015975% 87.84145538818858%, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 0%, 0) 100%), radial-gradient(at 53.317331315594885% 51.05598127622819%, hsla(180, 32.00000000000001%, 70.58823529411765%, 1) 0%, hsla(180, 32.00000000000001%, 70.58823529411765%, 0) 100%), radial-gradient(at 45.13970978683963% 80.279989217324%, hsla(167.99999999999997, 17.857142857142865%, 43.92156862745098%, 1) 0%, hsla(167.99999999999997, 17.857142857142865%, 43.92156862745098%, 0) 100%), radial-gradient(at 67.2432457735036% 85.68203355586652%, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 0%, 0) 100%), radial-gradient(at 29.208298789205834% 64.9450943700276%, hsla(180, 32.00000000000001%, 70.58823529411765%, 1) 0%, hsla(180, 32.00000000000001%, 70.58823529411765%, 0) 100%), radial-gradient(at 90.8048422852741% 45.22702281854205%, hsla(167.99999999999997, 17.857142857142865%, 43.92156862745098%, 1) 0%, hsla(167.99999999999997, 17.857142857142865%, 43.92156862745098%, 0) 100%), radial-gradient(at 32.88250044865868% 88.06380896124169%, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 0%, 0) 100%), radial-gradient(at 55.34842137687335% 78.87859660797854%, hsla(180, 32.00000000000001%, 70.58823529411765%, 1) 0%, hsla(180, 32.00000000000001%, 70.58823529411765%, 0) 100%), radial-gradient(at 24.246204240042847% 70.95320191187552%, hsla(167.99999999999997, 17.857142857142865%, 43.92156862745098%, 1) 0%, hsla(167.99999999999997, 17.857142857142865%, 43.92156862745098%, 0) 100%), radial-gradient(at 70.84764293741219% 63.14286712264692%, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 0%, 0) 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+    body {
+        color: var(--tg-theme-text-color);
+        background: var(--tg-theme-bg-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
 
-        .Main {
-            width: 100%;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    .Main {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-        h1 {
-            margin-top: 40px;
-            margin-bottom: 10px;
-        }
+    h1 {
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
 
-        img {
-            width: 70px;
-            margin: 30px auto;
-        }
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 30px auto;
+    }
 
-        .btn {
-            border: 0;
-            border-radius: 5px;
-            margin-top: 50px;
-            height: 60px;
-            width: 200px;
-            font-style: 20px;
-            font-weight: 500;
-            cursor: pointer;
-            color: var(--tg-theme-button-text-color);
-            background: var(--tg-theme-button-color);
-        }
+    .btn {
+        border: 0;
+        border-radius: 5px;
+        margin-top: 50px;
+        height: 60px;
+        width: 200px;
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        color: var(--tg-theme-button-text-color);
+        background: var(--tg-theme-button-color);
+    }
 
-        .btn-link {
-            background: none;
-            text-decoration: none;
-            color: var(--tg-theme-link-color);
-        }
+    .btn-link {
+        background: none;
+        text-decoration: none;
+        color: var(--tg-theme-link-color);
+    }
 
-        .btn-link:hover {
-            background: var(--tg-theme-link-color-hover);
-        }
+    .btn-link:hover {
+        background: var(--tg-theme-link-color-hover);
+    }
+</style>
 
-    </style>
     </head>
     <body>
         <div class="Main">
             <img style="width: 100%;" src=clear_logo.png alt="123">
-            <h1>Тут вы сможете найти все инструкции для покупки товаров с POIZON
-                и не только</h1>
+            <h1>Тут вы сможете найти все инструкции для покупки товаров с POIZON и не только</h1>
             <p></p>
 
             <button class="btn"
-                onclick="window.open('https://telegra.ph/Kak-polzovatsya-prilozheniem-POIZON-06-09','_blank');">Как
-                пользоваться приложением Poizon</button>
-            <button class="btn"
-                onclick="window.open('https://telegra.ph/Informaciya-po-oplate-i-dostavke-06-09','_blank');">Информация
-                по оплате и доставке</button>
-            <button class="btn"
-                onclick="window.open('https://telegra.ph/Proverka-originalnosti-tovara-ot-POIZON-06-09','_blank');">Проверка
-                оригинальности товара от Poizon</button>
-            <button class="btn"
-                onclick="window.open('https://telegra.ph/Ispolzovanie-filtrov-i-podbor-razmera-POIZON-06-09','_blank');">Использование
-                фильтров и подбор размера Poizon</button>
-            <button class="btn"
-                onclick="window.open('https://telegra.ph/Marketplejs-95-06-09','_blank');">Что
-                такое 95 в Poizon?</button>
+                    onclick="window.open('https://telegra.ph/Kak-polzovatsya-prilozheniem-POIZON-06-09','_blank');">Как пользоваться приложением Poizon</button>
+            <button class="btn" onclick="window.open('https://telegra.ph/Informaciya-po-oplate-i-dostavke-06-09','_blank');">Информация по оплате и доставке</button>
+            <button class="btn" onclick="window.open('https://telegra.ph/Proverka-originalnosti-tovara-ot-POIZON-06-09','_blank');">Проверка оригинальности товара от Poizon</button>
+            <button class="btn" onclick="window.open('https://telegra.ph/Ispolzovanie-filtrov-i-podbor-razmera-POIZON-06-09','_blank');">Использование фильтров и подбор размера Poizon</button>
+            <button class="btn" onclick="window.open('https://telegra.ph/Marketplejs-95-06-09','_blank');">Что такое 95 в Poizon?</button>
             <img style="width: 100%;" src=clear_boxes.png alt="123">
 
         </div>
