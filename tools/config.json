@@ -1,0 +1,14 @@
+{
+  "rate": 0.47,
+  "insurance_redemption": 10,
+  "ship_L": 36,
+  "margin_L": 80,
+  "ship_M": 30,
+  "margin_M": 75,
+  "ship_S": 26,
+  "margin_S": 70,
+  "ship_XS": 20,
+  "margin_XS": 65,
+  "ship_T": 33,
+  "margin_T": 90
+}
