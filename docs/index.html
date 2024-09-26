@@ -20,7 +20,9 @@
             width: 100%;
             padding: 25px;
             text-align: center;
-
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         h1 {
@@ -45,15 +47,32 @@
             color: var(--tg-theme-button-text-color);
             background: var(--tg-theme-button-color);
         }
-        
+
+        .btn-link {
+            background: none;
+            text-decoration: none;
+            color: var(--tg-theme-link-color);
+        }
+
+        .btn-link:hover {
+            background: var(--tg-theme-link-color-hover);
+        }
+
     </style>
     </head>
     <body>
         <div class="Main">
+            <img style="width: 100%;" src=clear_logo.png alt="123">
             <h1>Тестовое приложение</h1>
-            <img src=clear_logo.png alt="123">
+<!--            <img src=clear_logo.png alt="123">-->
             <p></p>
             <button class="btn">Кнопка</button>
+            <a class="btn btn-link" href="https://telegra.ph/Kak-polzovatsya-prilozheniem-POIZON-06-09">Как пользоваться приложением Poizon</a>
+            <a class="btn btn-link" href="https://telegra.ph/Informaciya-po-oplate-i-dostavke-06-09">Информация по оплате и доставке</a>
+            <a class="btn btn-link" href="https://telegra.ph/Proverka-originalnosti-tovara-ot-POIZON-06-09">Проверка оригинальности товара от Poizon</a>
+            <a class="btn btn-link" href="https://telegra.ph/Ispolzovanie-filtrov-i-podbor-razmera-POIZON-06-09">Использование фильтров и подбор размера Poizon</a>
+            <a class="btn btn-link" href="https://telegra.ph/Marketplejs-95-06-09">Что такое 95 в Poizon?</a>
+<!--            <a class="btn btn-link" href="ссылка">Текст</a>-->
         </div>
 
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
