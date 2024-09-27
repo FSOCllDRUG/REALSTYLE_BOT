@@ -9,7 +9,7 @@ from aiogram.types import Message, CallbackQuery, ReplyKeyboardRemove  # noqa
 from create_bot import bot, env_admins  # noqa
 from filters.is_decimal import IsDecimal
 from keyboards.inline import inline_main, inline_categories, inline_cost, get_callback_btns
-from keyboards.reply import reply_menu
+from keyboards.reply import reply_menu # noqa
 from tools.config_manager import get_config_value
 from tools.cost_calculation import calculate_cost
 from tools.texts import cost_text, manager_msg_url
@@ -37,7 +37,7 @@ async def cmd_start(message: Message):
     photo_id = 'AgACAgIAAxkBAAIDbGb2Am8MuNKnVDEg-ZjGycSiZ5TXAAKo4zEbh86xSywUjO7c1sMIAQADAgADeQADNgQ'
     text = ("<b>Привет! Я бот помощник</b> @realstyle_by\n"
             "Помогу рассчитать тебе стоимость товара с <b>POIZON</b> и не только 🤖")
-    await message.answer_photo(photo_id, caption=text, reply_markup=await reply_menu())
+    await message.answer_photo(photo_id, caption=text, reply_markup=ReplyKeyboardRemove())
     await message.answer(
         f"C моей помощью ты можешь:\n"
         f"- Рассчитать сумму своего заказа💵\n"
