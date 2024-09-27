@@ -74,8 +74,10 @@ async def category_chosen(callback: CallbackQuery, state: FSMContext):
     await callback.answer("")
     await state.update_data(category=callback.data)
     rate = await get_config_value("rate")
-    await callback.message.answer(f"Введи цену в ¥(Юанях), а я рассчитаю итоговую стоимость.\n\n"
+    photo_id = 'AgACAgIAAxkBAAIDSGb19ZiQF91MJ8Yip0Xb7zyIaFzZAAKN4zEbh86xSzW2ZcFARwGPAQADAgADeAADNgQ'
+    text = (f"Введи цену в ¥(Юанях), а я рассчитаю итоговую стоимость.\n\n"
                                   f"Актуальный курс— 1¥ = {rate} BYN")
+    await callback.message.answer_photo(photo_id, caption=text)
     await state.set_state(CostCalc.price)
 
 
@@ -131,3 +133,4 @@ async def faq(callback: CallbackQuery):
 # async def get_photo_id(message: Message):
 #     photo_id = message.photo[-1].file_id
 #     await message.answer(f"id фотографии: {photo_id}")
+# AgACAgIAAxkBAAIDSGb19ZiQF91MJ8Yip0Xb7zyIaFzZAAKN4zEbh86xSzW2ZcFARwGPAQADAgADeAADNgQ

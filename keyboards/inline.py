@@ -25,8 +25,7 @@ async def inline_main(admin: bool):
         [InlineKeyboardButton(text="🎯Отзывы", callback_data='reviews'),
          InlineKeyboardButton(text="📲Связь с менеджером", url=manager_msg_url)],
         [InlineKeyboardButton(text="🚚Как заказать?",
-                              url='https://telegra.ph/Kak-polzovatsya-prilozheniem-POIZON-06-09'),
-         InlineKeyboardButton(text="❓F.A.Q", callback_data='faq')],
+                              url='https://telegra.ph/Kak-polzovatsya-prilozheniem-POIZON-06-09')],
         [InlineKeyboardButton(text="‼️Акции‼️", callback_data='discounts'),
          InlineKeyboardButton(text="🎒Товары в наличии", callback_data='in_stock')],
     ])
