@@ -118,7 +118,9 @@ async def in_stock(callback: CallbackQuery):
             "➖ <b>Доставка товаров из наличия, составляет от 2, до 5 рабочих дней.</b>!")
     await callback.message.answer_photo(photo_id, caption=text, reply_markup=await get_callback_btns(btns={"НА РУКАХ✅":
                                                                                                                "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTE4MjM3ODY3ODAzMzAx?igsh=MTI4cHo1cHRqemR2OQ",
-                                                                                                           "Наш Instagram": "https://www.instagram.com/realstyle_by/"}))
+                                                                                                           "Наш "
+                                                                                                           "Instagram": "https://www.instagram.com/realstyle_by/",
+                                                                                                           "🔙Назад": "menu"}))
 
 
 @user_router.callback_query(F.data == "discounts")
@@ -134,14 +136,16 @@ async def discount(callback: CallbackQuery):
                                   "<b>При оформлении 10-ти позиций и более скидка обсуждается индивидуально с "
                                   "менеджером‼️</b>\n\n"
                                   "По всем вопросам обращайтесь к менеджеру⬇️",
-                                  reply_markup=await get_callback_btns(btns={"Менеджер": f"{manager_msg_url}"}))
+                                  reply_markup=await get_callback_btns(btns={"Менеджер": f"{manager_msg_url}",
+                                                                             "🔙Назад": "menu"}, sizes=(1,)))
 
 
 @user_router.callback_query(F.data == "reviews")
 async def faq(callback: CallbackQuery):
     await callback.answer("")
     await callback.message.answer("Отзывы наших клиентов:", reply_markup=await get_callback_btns(
-        btns={"Отзывы": "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTY2NDIwNTEwMjEyMjQ0"}))
+        btns={"Отзывы": "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTY2NDIwNTEwMjEyMjQ0", "🔙Назад": "menu"},
+        sizes=(1,)))
 
 
 @user_router.callback_query(F.data == "faq")
