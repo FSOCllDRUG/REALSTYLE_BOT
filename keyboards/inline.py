@@ -21,11 +21,14 @@ async def get_callback_btns(
 
 async def inline_main(admin: bool):
     inline = InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text="Инструкция по БОТу 🤖",
+                              url='https://telegra.ph/Instrukciya-po-ispolzovaniyu-bota-09-27-2')],
         [InlineKeyboardButton(text="💵Рассчитать стоимость", callback_data='calculate_cost')],
         [InlineKeyboardButton(text="🎯Отзывы", callback_data='reviews'),
          InlineKeyboardButton(text="📲Связь с менеджером", url=manager_msg_url)],
         [InlineKeyboardButton(text="🚚Как заказать?",
-                              url='https://telegra.ph/Kak-polzovatsya-prilozheniem-POIZON-06-09')],
+                              url='https://telegra.ph/Kak-polzovatsya-prilozheniem-POIZON-06-09'),
+         InlineKeyboardButton(text="❓F.A.Q", callback_data='faq')],
         [InlineKeyboardButton(text="‼️Акции‼️", callback_data='discounts'),
          InlineKeyboardButton(text="🎒Товары в наличии", callback_data='in_stock')],
     ])
