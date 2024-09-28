@@ -34,7 +34,7 @@ async def inline_main(admin: bool):
     ])
     if admin == True:
         inline.inline_keyboard.append([InlineKeyboardButton(text="💻Админ меню", callback_data='admin_menu')])
-        return inline
+    return inline
 
 
 inline_categories = InlineKeyboardMarkup(inline_keyboard=[
