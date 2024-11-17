@@ -3,7 +3,7 @@ from decimal import Decimal
 from tools.config_manager import read_config
 
 
-async def calculate_cost(price: Decimal, category: str) -> Decimal:
+async def calculate_cost(price: Decimal, category: str, currency: str) -> Decimal:
     """
     Calculate the cost based on the price and category.
 
@@ -18,14 +18,14 @@ async def calculate_cost(price: Decimal, category: str) -> Decimal:
     cfg = await read_config()
 
     # Get rate from config
-    rate = Decimal(cfg["rate"])
+    rate = Decimal(cfg[f"rate_{currency}"])
 
     # Get insurance and redemption from config
-    insurance_redemption = Decimal(cfg["insurance_redemption"])
+    insurance_redemption = Decimal(cfg[f"insurance_redemption_{currency}"])
 
     # Get ship and margin from config based on category
-    ship = Decimal(cfg[f"ship_{category}"])
-    margin = Decimal(cfg[f"margin_{category}"])
+    ship = Decimal(cfg[f"ship_{category}_{currency}"])
+    margin = Decimal(cfg[f"margin_{category}_{currency}"])
 
     # Calculate cost
     cost = price * rate * ((100 + insurance_redemption) / 100) + ship + margin
