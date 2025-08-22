@@ -57,7 +57,6 @@ async def count_new_users_this_month():
 
 
 async def send_monthly_report():
-    print("send_monthly_report")
     total_users_count = await count_total_users()
     new_users_count = await count_new_users_this_month()
     report_message = (f"Отчет за текущий месяц:\n"
@@ -69,7 +68,6 @@ async def send_monthly_report():
 
 # Функция для отправки отчета в конце месяца
 async def send_previous_month_report():
-    print("send_previous_month_report")
     total_users_count = await count_total_users()
     new_users_count = await count_new_users()
     report_message = (

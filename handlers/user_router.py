@@ -137,11 +137,14 @@ async def category_price(message: Message, state: FSMContext):
     await state.clear()
     await message.answer(f"{await cost_text(cost_data)}", reply_markup=inline_cost)
 
-@user_router.callback_query(F.data == "exoress_delivery")
-async def exoress_delivery(callback: CallbackQuery):
+
+@user_router.callback_query(F.data == "express_delivery")
+async def express_delivery(callback: CallbackQuery):
     await callback.answer("")
-    await callback.message.answer("<b>Индивидуальный расчёт экспресс-доставки (5-7 дней) можно получить у менеджера</b>",
-                                  reply_markup=inline_express_delivery)
+    await callback.message.answer(
+        "<b>Индивидуальный расчёт экспресс-доставки (5-7 дней) можно получить у менеджера</b>",
+        reply_markup=inline_express_delivery)
+
 
 @user_router.callback_query(F.data == "in_stock")
 async def in_stock(callback: CallbackQuery):
@@ -156,11 +159,13 @@ async def in_stock(callback: CallbackQuery):
             "➖ <b>Все товары из наличия, проходят тщательную проверку на оригинальность и "
             "качество.</b>\n"
             "➖ <b>Доставка товаров из наличия, составляет от 2, до 5 рабочих дней.</b>!")
-    await callback.message.answer_photo(photo_id, caption=text, reply_markup=await get_callback_btns(btns={"НА РУКАХ✅":
-                                                                                                               "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTE4MjM3ODY3ODAzMzAx?igsh=MTI4cHo1cHRqemR2OQ",
-                                                                                                           "Наш "
-                                                                                                           "Instagram": "https://www.instagram.com/realstyle_by/",
-                                                                                                           "🔙Назад": "menu"}))
+    await callback.message.answer_photo(photo_id, caption=text,
+                                        reply_markup=await get_callback_btns(
+                                            btns={"НА РУКАХ✅":
+                                                      "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTE4MjM3ODY3ODAzMzAx?igsh=MTI4cHo1cHRqemR2OQ",
+                                                  "Наш "
+                                                  "Instagram": "https://www.instagram.com/realstyle_by/",
+                                                  "🔙Назад": "menu"}))
 
 
 @user_router.callback_query(F.data == "discounts")

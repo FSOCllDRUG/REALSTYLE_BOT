@@ -18,7 +18,6 @@ async def cost_text(cost_data: dict):
     cost_poizon = price * rate
     # Категория товара(подкатегория)
     category = cost_data.get("subcategory")
-    print(category)
     # Доставка вещи выбранной категории
     ship = Decimal(await get_config_value(f"ship_{category}_{currency}"))
     # Комиссия сервиса
@@ -42,7 +41,7 @@ async def cost_text(cost_data: dict):
             f"- Доставка до склада в Минске: {ship:.2f} {currency}\n"
             f"- Комиссия сервиса: {margin:.2f} {currency}\n"
             f"- Страховка: {cost_poizon / 100 * insurance:.2f} {currency}"
-            f"\n\n<b>Итоговая стоимость: {final_cost:.2f} {currency}</b>\n\n"
+            f"\n\n<b>Итоговая стоимость: {final_cost:.2f} {currency}{'🇷🇺' if currency == 'RUB' else '🇧🇾'}</b>\n\n"
             f"{footer}")
 
 
@@ -56,3 +55,15 @@ async def admin_change_text():
             f"<blockquote expandable> стоимость = цена * курс * ((100 + страховка_выкуп) / 100) + доставка + наценка</blockquote>"
             f"\n\n"
             f"Выбери ниже, что ты хочешь изменить")
+
+
+cbk_msg = ("<b>Отправь содержание кнопок вида:</b>\n\n"
+           "текст кнопки:ссылка\n"
+           "текст кнопки:ссылка\n\n"
+           "Пример: \n<pre>Перейти на сайт:https://example.com\n"
+           "Перейти к посту:https://t.me/for_test_ch/3</pre>"
+           "\n\n"
+           "❗️<b>Количество кнопок</b>\n"
+           "<b>должно быть не более 10.</b>"
+           "Кнопки присылать <b><u>ОДНИМ</u></b> сообщением, каждая кнопка\n"
+           "с новой строки!")

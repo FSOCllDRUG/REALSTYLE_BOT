@@ -31,7 +31,7 @@ async def inline_main(admin: bool):
          InlineKeyboardButton(text="❓F.A.Q", callback_data="faq")],
         [InlineKeyboardButton(text="‼️Акции‼️", callback_data="discounts"),
          InlineKeyboardButton(text="🎒Товары в наличии", callback_data="in_stock")],
-        [InlineKeyboardButton(text="🚄Экспресс-доставка", callback_data="exoress_delivery")],
+        [InlineKeyboardButton(text="🚄Экспресс-доставка", callback_data="express_delivery")],
     ])
     if admin == True:
         inline.inline_keyboard.append([InlineKeyboardButton(text="💻Админ меню", callback_data="admin_menu")])
@@ -118,6 +118,7 @@ inline_cost = InlineKeyboardMarkup(inline_keyboard=[
 admin_price = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text="Получить таблицу расценок", callback_data="get_config")],
     [InlineKeyboardButton(text="Получить отчёт о пользователях", callback_data="users_report")],
+    [InlineKeyboardButton(text="Создать рассылку", callback_data="create_mailing")],
 ])
 
 inline_express_delivery = InlineKeyboardMarkup(inline_keyboard=[
