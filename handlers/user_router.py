@@ -17,11 +17,12 @@ from tools.users import add_user
 
 user_router = Router()
 
+main_photo_id = 'AgACAgIAAxkBAAK_6GionDp2QO7BqrYp8-Hpg9G60ZIBAAJ0DDIb0_RISV9r_Cgqvq9SAQADAgADdwADNgQ'
 
 @user_router.message(StateFilter("*"), F.text.casefold() == "отмена")
 async def cancel_fsm(message: Message, state: FSMContext):
     await state.clear()
-    photo_id = 'AgACAgIAAxkBAAIX-Wc5B2eB0DFMY8J63VpEytimy-_NAAJD5DEbuLvJSSfKeC2M2YTTAQADAgADeAADNgQ'
+    photo_id = main_photo_id
     text = ("Действие отменено!\n\n<b>Я бот помощник</b> @realstyle_by\n"
             "Помогу рассчитать тебе стоимость товара с <b>POIZON</b> и не только 🤖")
     await message.answer_photo(photo_id, caption=text, reply_markup=await inline_main(message.from_user.id
@@ -36,7 +37,7 @@ async def nothing(callback: CallbackQuery):
 @user_router.message(CommandStart())
 async def cmd_start(message: Message):
     await add_user(message.from_user.id)
-    photo_id = 'AgACAgIAAxkBAAIX-Wc5B2eB0DFMY8J63VpEytimy-_NAAJD5DEbuLvJSSfKeC2M2YTTAQADAgADeAADNgQ'
+    photo_id = main_photo_id
     text = ("<b>Привет! Я бот помощник</b> @realstyle_by\n"
             "Помогу рассчитать тебе стоимость товара с <b>POIZON</b> и не только 🤖")
     await message.answer_photo(photo_id, caption=text, reply_markup=ReplyKeyboardRemove())
@@ -53,7 +54,7 @@ async def cmd_start(message: Message):
 async def main_menu_inline(callback: CallbackQuery, state: FSMContext):
     await callback.answer("")
     await state.clear()
-    photo_id = 'AgACAgIAAxkBAAIX-Wc5B2eB0DFMY8J63VpEytimy-_NAAJD5DEbuLvJSSfKeC2M2YTTAQADAgADeAADNgQ'
+    photo_id = main_photo_id
     text = ("<b>Привет! Я бот помощник</b> @realstyle_by\n"
             "Помогу рассчитать тебе стоимость товара с <b>POIZON</b> и не только 🤖")
     await callback.message.answer_photo(photo_id, caption=text, reply_markup=await inline_main(callback.from_user.id
@@ -63,7 +64,7 @@ async def main_menu_inline(callback: CallbackQuery, state: FSMContext):
 @user_router.message(F.text == "Меню")
 async def main_menu_reply(message: Message, state: FSMContext):
     await state.clear()
-    photo_id = 'AgACAgIAAxkBAAIDbGb2Am8MuNKnVDEg-ZjGycSiZ5TXAAKo4zEbh86xSywUjO7c1sMIAQADAgADeQADNgQ'
+    photo_id = main_photo_id
     text = ("<b>Привет! Я бот помощник</b> @realstyle_by\n"
             "Помогу рассчитать тебе стоимость товара с <b>POIZON</b> и не только 🤖")
     await message.answer_photo(photo_id, caption=text, reply_markup=await inline_main(message.from_user.id
@@ -207,7 +208,7 @@ async def developer_info(message: Message):
     await message.answer(f"Контакты👨🏻‍💻:\n"
                          f"Telegram: <b><i><u><a href='tg://user?id=6092344340'>НАПИСАТЬ</a></u></i></b>\n")
 
-# @user_router.message(F.photo)
-# async def get_photo_id(message: Message):
-#     photo_id = message.photo[-1].file_id
-#     await message.answer(f"id фотографии:\n<pre>{photo_id}</pre>")
+#@user_router.message(F.photo)
+#async def get_photo_id(message: Message):
+#    photo_id = message.photo[-1].file_id
+#    await message.answer(f"id фотографии:\n<pre>{photo_id}</pre>")
